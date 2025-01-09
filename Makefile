@@ -28,7 +28,7 @@ GCCPRIFIX=riscv64-unknown-elf-
 CC=${GCCPRIFIX}gcc
 
 # ld
-LDFLAGS=-Ttext=0x80000000
+LDFLAGS=-T kernel.ld
 
 # shell
 MKDIR=mkdir -p
