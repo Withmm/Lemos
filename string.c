@@ -1,8 +1,18 @@
 #include "string.h"
+#include "defs.h"
 size_t
 strlen(const char *str)
 {
-	return 0;
+	size_t cnt = 0;
+	if (str == 0) {
+		/* TODO : Use assert instead. */
+		printf("strlen failed!\n");
+		while (1)
+			;
+	}
+	while (*str++)
+		++cnt;
+	return cnt;
 }
 
 char *
@@ -14,7 +24,12 @@ strcpy(char *dst, const char *src)
 char *
 strncpy(char *dst, const char *src, size_t n)
 {
-	return 0;
+	char *dst_p = dst + strlen(dst);
+	const char *src_p = src;
+	for (int i = 0; i < n; i++) {
+		*dst_p++ = *src_p++;
+	}
+	return dst;
 }
 
 int
@@ -65,6 +80,9 @@ strncat(char *dest, const char *src, size_t n)
 void *
 memset(void *s, int c, size_t n)
 {
+	for (int i = 0; i < n; i++) {
+		*(char *)(s + i) = c;
+	}
 	return 0;
 }
 
@@ -127,4 +145,36 @@ int
 tolower(int c)
 {
 	return 0;
+}
+
+u8
+atoi(char *dst, int num)
+{
+	int i = 0;
+	int is_neg = 0;
+	if (num < 0) {
+		is_neg = 1;
+		num = -num;
+	}
+	do {
+		dst[i++] = (num % 10) + '0';
+		num /= 10;
+	} while (num);
+
+	if (is_neg)
+		dst[i++] = '-';
+	dst[i] = 0;
+
+	int start = 0;
+	int end = i - 1; // [ ]
+
+	while (start < end) {
+		char tmp = dst[start];
+		dst[start] = dst[end];
+		dst[end] = tmp;
+		++start;
+		--end;
+	}
+
+	return i;
 }

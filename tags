@@ -1,0 +1,100 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/xiongzile/lemos/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+${OUT}	Makefile	/^${OUT}:$/;"	t
+${OUT}/${KERNEL}	Makefile	/^${OUT}\/${KERNEL}: ${AOBJS} ${COBJS}$/;"	t
+${OUT}/%.o	Makefile	/^${OUT}\/%.o: %.S$/;"	t
+${OUT}/%.o	Makefile	/^${OUT}\/%.o: %.c $(DEPS)$/;"	t
+.DEFAULT_GOAL	Makefile	/^.DEFAULT_GOAL := all$/;"	m
+.bss	kernel.ld	/^    .bss : {$/;"	S
+.data	kernel.ld	/^    .data : {$/;"	S
+.rodata	kernel.ld	/^    .rodata : {$/;"	S
+.text	kernel.ld	/^    .text : {$/;"	S
+AOBJS	Makefile	/^AOBJS := $(patsubst %.S,${OUT}\/%.o,$(ASRCS))$/;"	m
+ASRCS	Makefile	/^ASRCS := $(wildcard *.S)$/;"	m
+CC	Makefile	/^CC=${GCCPRIFIX}gcc$/;"	m
+COBJS	Makefile	/^COBJS := $(patsubst %.c,${OUT}\/%.o,$(CSRCS))$/;"	m
+CSRCS	Makefile	/^CSRCS := $(wildcard *.c)$/;"	m
+DEPS	Makefile	/^DEPS := $(wildcard *.h)$/;"	m
+DLL	uart.c	/^#define DLL /;"	d	file:
+DLM	uart.c	/^#define DLM /;"	d	file:
+FCR	uart.c	/^#define FCR /;"	d	file:
+GCCPRIFIX	Makefile	/^GCCPRIFIX=riscv64-unknown-elf-$/;"	m
+IER	uart.c	/^#define IER /;"	d	file:
+ISR	uart.c	/^#define ISR /;"	d	file:
+KERNEL	Makefile	/^KERNEL=kernel.bin$/;"	m
+LCR	uart.c	/^#define LCR /;"	d	file:
+LDFLAGS	Makefile	/^LDFLAGS=-T kernel.ld$/;"	m
+LSR	uart.c	/^#define LSR /;"	d	file:
+LSR_RX_READY	uart.c	/^#define LSR_RX_READY /;"	d	file:
+LSR_TX_IDLE	uart.c	/^#define LSR_TX_IDLE /;"	d	file:
+MCR	uart.c	/^#define MCR /;"	d	file:
+MKDIR	Makefile	/^MKDIR=mkdir -p$/;"	m
+MSR	uart.c	/^#define MSR /;"	d	file:
+NSMP	Makefile	/^NSMP = 1$/;"	m
+OUT	Makefile	/^OUT=build$/;"	m
+QEMU	Makefile	/^QEMU=qemu-system-riscv64$/;"	m
+QFLAGS	Makefile	/^QFLAGS= -nographic -smp ${NSMP} -machine virt -bios none$/;"	m
+RHR	uart.c	/^#define RHR /;"	d	file:
+RM	Makefile	/^RM = rm -rf$/;"	m
+SPR	uart.c	/^#define SPR /;"	d	file:
+THR	uart.c	/^#define THR /;"	d	file:
+UART0	uart.h	/^#define UART0 /;"	d
+UART_READ	uart.c	/^#define UART_READ(/;"	d	file:
+UART_REG	uart.c	/^#define UART_REG(/;"	d	file:
+UART_WRITE	uart.c	/^#define UART_WRITE(/;"	d	file:
+__ASSERT_H__	assert.h	/^#define __ASSERT_H__$/;"	d
+__DEFS_H__	defs.h	/^#define __DEFS_H__$/;"	d
+__STRING_H__	string.h	/^#define __STRING_H__$/;"	d
+__TYPES_H__	types.h	/^#define __TYPES_H__$/;"	d
+__UART_H__	uart.h	/^#define __UART_H__$/;"	d
+_start	start.S	/^_start:$/;"	l
+all	Makefile	/^all: ${OUT} ${OUT}\/${KERNEL}$/;"	t
+assert	assert.h	/^#define assert(/;"	d
+clean	Makefile	/^clean:$/;"	t
+end	kernel.ld	/^    PROVIDE(end = .);$/;"	s	assignment:provide
+info	Makefile	/^info:$/;"	t
+isalpha	string.c	/^isalpha(int c)$/;"	f	typeref:typename:int
+isdigit	string.c	/^isdigit(int c)$/;"	f	typeref:typename:int
+islower	string.c	/^islower(int c)$/;"	f	typeref:typename:int
+isspace	string.c	/^isspace(int c)$/;"	f	typeref:typename:int
+isupper	string.c	/^isupper(int c)$/;"	f	typeref:typename:int
+kernel_main	main.c	/^kernel_main(void)$/;"	f	typeref:typename:int
+memcmp	string.c	/^memcmp(const void *str1, const void *str2, size_t n)$/;"	f	typeref:typename:int
+memcpy	string.c	/^memcpy(void *dest, const void *src, size_t n)$/;"	f	typeref:typename:void *
+memmove	string.c	/^memmove(void *dest, const void *src, size_t n)$/;"	f	typeref:typename:void *
+memset	string.c	/^memset(void *s, int c, size_t n)$/;"	f	typeref:typename:void *
+printf	printf.c	/^printf(const char *fmt, ...)$/;"	f	typeref:typename:int
+run	Makefile	/^run: all$/;"	t
+size_t	types.h	/^typedef u32 size_t;$/;"	t	typeref:typename:u32
+spin	start.S	/^spin:$/;"	l
+stack0	main.c	/^char stack0[4096];$/;"	v	typeref:typename:char[4096]
+strcat	string.c	/^strcat(char *dest, const char *src)$/;"	f	typeref:typename:char *
+strchr	string.c	/^strchr(const char *s, int c)$/;"	f	typeref:typename:char *
+strcmp	string.c	/^strcmp(const char *s1, const char *s2)$/;"	f	typeref:typename:int
+strcpy	string.c	/^strcpy(char *dst, const char *src)$/;"	f	typeref:typename:char *
+strlen	string.c	/^strlen(const char *str)$/;"	f	typeref:typename:size_t
+strncat	string.c	/^strncat(char *dest, const char *src, size_t n)$/;"	f	typeref:typename:char *
+strncmp	string.c	/^strncmp(const char *s1, const char *s2, size_t n)$/;"	f	typeref:typename:int
+strncpy	string.c	/^strncpy(char *dst, const char *src, size_t n)$/;"	f	typeref:typename:char *
+strrchr	string.c	/^strrchr(const char *s, int c)$/;"	f	typeref:typename:char *
+strstr	string.c	/^strstr(const char *s1, const char *needle)$/;"	f	typeref:typename:char *
+text_end	kernel.ld	/^        PROVIDE(text_end = .);$/;"	s	section:.text	assignment:provide
+tolower	string.c	/^tolower(int c)$/;"	f	typeref:typename:int
+toupper	string.c	/^toupper(int c)$/;"	f	typeref:typename:int
+u16	types.h	/^typedef unsigned short u16;$/;"	t	typeref:typename:unsigned short
+u32	types.h	/^typedef unsigned int u32;$/;"	t	typeref:typename:unsigned int
+u64	types.h	/^typedef unsigned long long u64;$/;"	t	typeref:typename:unsigned long long
+u8	types.h	/^typedef unsigned char u8;$/;"	t	typeref:typename:unsigned char
+uart_init	uart.c	/^uart_init(void)$/;"	f	typeref:typename:void
+uart_putc	uart.c	/^uart_putc(char c)$/;"	f	typeref:typename:int
+uart_puts	uart.c	/^uart_puts(const char *s)$/;"	f	typeref:typename:void
+vsprintf	printf.c	/^vsprintf(char *buf, const char *fmt, va_list ap)$/;"	f	typeref:typename:int

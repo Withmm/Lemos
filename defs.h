@@ -6,6 +6,9 @@
 /* uart.c */
 void uart_init(void);
 int uart_putc(char c);
-void uart_puts(char *s);
+void uart_puts(const char *s);
+
+/* print.c */
+int printf(const char *fmt, ...);
 
 #endif

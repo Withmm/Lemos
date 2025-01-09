@@ -36,4 +36,6 @@ int isupper(int c);
 int islower(int c);
 int toupper(int c);
 int tolower(int c);
+
+u8 atoi(char *dst, int num);
 #endif
