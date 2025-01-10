@@ -45,13 +45,24 @@ vsprintf(char *buf, const char *fmt, va_list ap)
 	}
 	return cnt;
 }
+
+int
+sprintf(char *buf, const char *fmt, ...)
+{
+	va_list ap;
+	va_start(ap, fmt);
+	int i = vsprintf(buf, fmt, ap);
+	va_end(ap);
+	return i;
+}
+
 int
 printf(const char *fmt, ...)
 {
 	char buf[1024] = { 0 };
 	va_list ap;
 	va_start(ap, fmt);
-	size_t i = vsprintf(buf, fmt, ap);
+	int i = vsprintf(buf, fmt, ap);
 	va_end(ap);
 	uart_puts(buf);
 	return i;

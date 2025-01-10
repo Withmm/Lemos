@@ -15,7 +15,7 @@ _start:
         addi a1, a1, 1
         mul a0, a0, a1
         add sp, sp, a0
-        # jump to start() in start.c
+        # jump to kernel_main() in main.c
         call kernel_main
 spin:
         j spin
